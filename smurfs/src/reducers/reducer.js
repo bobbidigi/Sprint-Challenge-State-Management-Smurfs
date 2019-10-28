@@ -34,6 +34,11 @@ import {
                     error: action.payload,
                     isLoading: false
                   };
+        // case ADD_SMURF:
+        //     return {
+        //         ...state,
+        //         smurfs: [...action.payload]
+        //     }          
         default:
             return state;    
     }

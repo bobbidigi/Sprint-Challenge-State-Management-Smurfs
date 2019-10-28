@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import "./App.css";
-import { fetchSmurfs } from "../actions/actions";
+import { fetchSmurfs, addSmurf } from "../actions/actions";
 import {connect} from 'react-redux' 
 import Form from './Form'
 import Smurf from './Smurf'
@@ -19,7 +19,7 @@ function App (props) {
         <div>Welcome to your state management version of Smurfs!</div>
         <div>Start inside of your `src/index.js` file!</div>
         <div>Have fun!</div>
-        <Form/>
+        <Form addSmurf={props.addSmurf}/>
         { props.isLoading ? ( <div className="spinner" /> ) : (
 
           <div>
@@ -33,7 +33,8 @@ function App (props) {
 }
 
 const mapDispatchToProps = {
-  fetchSmurfs
+  fetchSmurfs,
+  addSmurf
 }
 
 function mapStateToProps(state) {
